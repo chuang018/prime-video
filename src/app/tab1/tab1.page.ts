@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  categories:any = null;
+
+  constructor() {
+    this.categories = "all";
+  }
 
 }

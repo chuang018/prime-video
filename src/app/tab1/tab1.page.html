@@ -1,17 +1,57 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <div class="logo"><img src="../../assets/icon/logo.png"></div>
+    <div slot="end" style="margin-right: 10px;"><img src="../../assets/icon/cast.png"></div>
+    <div slot="end"><img src="../../assets/icon/user.png"></div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+ 
+<ion-grid>
+    <!-- First Row is Segment Between All / Movies / TV Shows -->
+    <ion-row>
+      <ion-segment [(ngModel)]="categories">
+        <ion-segment-button value="all">
+          <ion-label>
+            All
+          </ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="movies">
+          <ion-label>
+            Movies
+          </ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="tvshows">
+          <ion-label>
+            TV shows
+          </ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-row>
+    <ion-row>
+      <div class="highlight">
+        <!-- put highlighted shows here -->
+        <ion-label>highlight</ion-label>
+      </div>
+    </ion-row>
+    <ion-row>
+      <div class="miniheader">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+        <div>
+          <ion-label  color="primary">
+            Prime
+          </ion-label>
+          <ion-label>
+            - Amazon Originals
+          </ion-label>
+        </div>
+        
+        <div>
+          <ion-icon name="chevron-forward-outline" class="chevron"></ion-icon>
+        </div>
+      </div>
+    </ion-row>
+</ion-grid>
+  
 </ion-content>
