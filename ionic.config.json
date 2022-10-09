@@ -1,0 +1,7 @@
+{
+  "name": "primevideo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
