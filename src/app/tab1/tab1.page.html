@@ -7,35 +7,45 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
-<ion-grid>
-    <!-- First Row is Segment Between All / Movies / TV Shows -->
+
+ <!--Segment Between All / Movies / TV Shows -->
+  <ion-segment [(ngModel)]="categories">
+    <ion-segment-button value="all">
+      <ion-label>
+        All
+      </ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="movies">
+      <ion-label>
+        Movies
+      </ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="tvshows">
+      <ion-label>
+        TV shows
+      </ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+<ion-grid *ngIf="categories==='all'">
+  
     <ion-row>
-      <ion-segment [(ngModel)]="categories">
-        <ion-segment-button value="all">
-          <ion-label>
-            All
-          </ion-label>
-        </ion-segment-button>
-        <ion-segment-button value="movies">
-          <ion-label>
-            Movies
-          </ion-label>
-        </ion-segment-button>
-        <ion-segment-button value="tvshows">
-          <ion-label>
-            TV shows
-          </ion-label>
-        </ion-segment-button>
-      </ion-segment>
-    </ion-row>
-    <ion-row>
-      <div class="highlight">
         <!-- put highlighted shows here -->
-        <ion-label>highlight</ion-label>
-      </div>
+        <!-- [option]="variable" <- put variable here to call in page.ts -->
+        <!-- #variable to identify the ion-slides -->
+        <!-- (ionSlidesDidLoad) "emitted after swiper initialization" to check if the swiper is initialized -->
+        <!-- if it's initialized then call function slidesDidLoad(variable) -->
+        <!-- slidesDidLoad then call funtion slides.startAutoPlay() which then will auto play the sliders at speed set at "slideOpt" -->
+        <!-- pager="true" to show page button at bottom of the slider component -->
+        <ion-slides class="highlight" [option]="slideOpt" pager="true" #slider (ionSlidesDidLoad)="slidesDidLoad(slider)">
+          <ion-slide class="templateswiper">Slide 1</ion-slide>
+          <ion-slide class="templateswiper">Slide 2</ion-slide>
+          <ion-slide class="templateswiper">Slide 3</ion-slide>
+        </ion-slides>
     </ion-row>
     <ion-row>
+
+      <!-- Mini Header (Prime - Amazon Originals)-->
       <div class="miniheader">
 
         <div>
@@ -51,7 +61,63 @@
           <ion-icon name="chevron-forward-outline" class="chevron"></ion-icon>
         </div>
       </div>
+      <!---->
+
+
     </ion-row>
+
+    <!-- Swiper for content -->
+    <ion-row>
+      
+      <div class="scrolling-wraper">
+        <div class="originals"><h2>Card</h2></div>
+        <div class="originals"><h2>Card</h2></div>
+        <div class="originals"><h2>Card</h2></div>
+        <div class="originals"><h2>Card</h2></div>
+        <div class="originals"><h2>Card</h2></div>
+        <div class="originals"><h2>Card</h2></div>
+      </div>
+      
+      <!--
+      <ion-slides>
+        <ion-slide class="templateswiper">Slide 1</ion-slide>
+        <ion-slide>Slide 2</ion-slide>
+        <ion-slide>Slide 3</ion-slide>
+      </ion-slides>
+      -->
+    </ion-row>
+
+    <ion-row>
+
+      <div class="miniheader">
+
+        <div>
+          <ion-label  color="primary">
+            Prime
+          </ion-label>
+          <ion-label>
+            - Recommended movies
+          </ion-label>
+        </div>
+        
+        <div>
+          <ion-icon name="chevron-forward-outline" class="chevron"></ion-icon>
+        </div>
+      </div>
+
+    </ion-row>
+
+    <ion-row>
+      <div class="scrolling-wraper">
+        <div class="movies"><h2>Card</h2></div>
+        <div class="movies"><h2>Card</h2></div>
+        <div class="movies"><h2>Card</h2></div>
+        <div class="movies"><h2>Card</h2></div>
+        <div class="movies"><h2>Card</h2></div>
+        <div class="movies"><h2>Card</h2></div>
+      </div>
+    </ion-row>
+
 </ion-grid>
   
 </ion-content>
