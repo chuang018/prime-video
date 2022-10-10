@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
 
  <!--Segment Between All / Movies / TV Shows -->
-  <ion-segment [(ngModel)]="categories">
+  <ion-segment [(ngModel)]="categories" style="margin-left:5px;margin-right:5px;">
     <ion-segment-button value="all">
       <ion-label>
         All
@@ -53,7 +53,7 @@
             Prime
           </ion-label>
           <ion-label>
-            - Amazon Originals
+            - Popular Movies
           </ion-label>
         </div>
         
@@ -70,12 +70,9 @@
     <ion-row>
       
       <div class="scrolling-wraper">
-        <div class="originals"><h2>Card</h2></div>
-        <div class="originals"><h2>Card</h2></div>
-        <div class="originals"><h2>Card</h2></div>
-        <div class="originals"><h2>Card</h2></div>
-        <div class="originals"><h2>Card</h2></div>
-        <div class="originals"><h2>Card</h2></div>
+        <div class="movie" *ngFor="let detail of tenPopularMovies">
+          <ion-img [src]="detail.image"></ion-img>
+        </div>
       </div>
       
       <!--
@@ -109,12 +106,9 @@
 
     <ion-row>
       <div class="scrolling-wraper">
-        <div class="movies"><h2>Card</h2></div>
-        <div class="movies"><h2>Card</h2></div>
-        <div class="movies"><h2>Card</h2></div>
-        <div class="movies"><h2>Card</h2></div>
-        <div class="movies"><h2>Card</h2></div>
-        <div class="movies"><h2>Card</h2></div>
+        <div class="movie" *ngFor="let rec of recommendedMovies">
+          <ion-img [src]="rec.image"></ion-img>
+        </div>
       </div>
     </ion-row>
 

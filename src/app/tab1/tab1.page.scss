@@ -52,10 +52,7 @@ ion-header{
     overflow-y: hidden;
     white-space: nowrap;
 
-    .originals{
-        display: inline-block;
-    }
-    .movies{
+    .movie{
         display: inline-block;
     }
 }
@@ -64,20 +61,15 @@ ion-header{
     display: none;
 }
 
-.originals {
-    border: 2px solid red;
-    border-radius: 10px;
+.movie {
+    //border: 2px solid red;
+    //border-radius: 10px;
     margin-right: 6px;
-    width: 140px;
+    width: 150px;
     height: 180px;
-    background: black;
-}
-
-.movies{
-    border: 2px solid red;
-    border-radius: 10px;
-    margin-right: 6px;
-    width: 160px;
-    height: 100px;
-    background: black;
+    //background-color: red;
+    ion-img{
+        width: 150px;
+        height: 180px;
+    }
 }
