@@ -18,5 +18,9 @@ export class ApiService {
   
   }
 
+  searchMovies(exp): Observable<any>{
+    return this.http.get<any>(this.url+'/en/API/Search/'+this.apiKey+"/"+exp);
+  }
+
 
 }

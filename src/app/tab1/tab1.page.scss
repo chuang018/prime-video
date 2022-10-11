@@ -68,8 +68,12 @@ ion-header{
     width: 150px;
     height: 180px;
     //background-color: red;
-    ion-img{
-        width: 150px;
-        height: 180px;
-    }
+    
+}
+
+.poster{
+    width: 150px;
+    height: 180px;
+    border-radius: 10px;
+    background-color: white;
 }

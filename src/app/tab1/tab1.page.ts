@@ -41,8 +41,6 @@ export class Tab1Page {
 
         this.tenPopularMovies = this.result.items.slice(0,10);
         this.recommendedMovies = this.result.items.slice(11,21);
-        console.log(this.tenPopularMovies);
-        console.log(this.recommendedMovies);
     })
   }
 

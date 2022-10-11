@@ -71,7 +71,8 @@
       
       <div class="scrolling-wraper">
         <div class="movie" *ngFor="let detail of tenPopularMovies">
-          <ion-img [src]="detail.image"></ion-img>
+          <!--<ion-img [src]="detail.image"></ion-img>-->
+          <img [src]="detail.image" class="poster">
         </div>
       </div>
       
@@ -107,7 +108,8 @@
     <ion-row>
       <div class="scrolling-wraper">
         <div class="movie" *ngFor="let rec of recommendedMovies">
-          <ion-img [src]="rec.image"></ion-img>
+          <!--<ion-img [src]="rec.image"></ion-img>-->
+          <img [src]="rec.image" class="poster">
         </div>
       </div>
     </ion-row>
