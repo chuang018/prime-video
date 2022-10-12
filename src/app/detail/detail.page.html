@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back-circle-outline" slot="start" size="large" (click)="back()"></ion-icon>
+    <div *ngIf="loading == false" class="title">{{meta.title}} - {{meta.year}}</div>
+    <ion-skeleton-text [animated]="true" style="width: 60%;" *ngIf="loading == true"></ion-skeleton-text>
+    <div slot="end" style="margin-right: 10px;"><img src="../../assets/icon/cast.png"></div>
+    <div slot="end"><img src="../../assets/icon/user.png"></div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="detail" *ngIf="loading == false">
+    <img [src]="meta.image" height="100%" width="450px" class="poster-img"/>
+    <div class="info">
+      <div style="margin-bottom: 6px;font-size: 16px;">{{meta.plot}}</div>
+      <div style="font-size: 13px;">{{meta.genres}}</div>
+      <div style="font-size: 13px;">IMDB {{meta.imDbRating}}</div>
+      <div style="font-size: 13px;">{{meta.year}} - {{meta.runtimeStr}}</div>
+      <div style="font-size: 13px;">{{meta.contentRating}}</div>
+      <div style="margin-bottom: 6px;font-size: 14px;">Languages: {{meta.languages}}</div>
+    </div>
+    
+  </div>
+</ion-content>

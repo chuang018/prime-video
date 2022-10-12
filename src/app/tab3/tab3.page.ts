@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { ApiService } from '../api.service';
 import { searchResult } from '../searchresult';
@@ -14,7 +15,7 @@ export class Tab3Page {
   notNull:boolean = false;
   result:searchResult[];
 
-  constructor(private api: ApiService, private loadingCtrl: LoadingController) {}
+  constructor(private api: ApiService, private loadingCtrl: LoadingController, private router: ActivatedRoute) {}
 
   search(value){
     console.log(value);

@@ -19,7 +19,11 @@ export class ApiService {
   }
 
   searchMovies(exp): Observable<any>{
-    return this.http.get<any>(this.url+'/en/API/Search/'+this.apiKey+"/"+exp);
+    return this.http.get<any>(this.url+'/en/API/SearchTitle/'+this.apiKey+"/"+exp);
+  }
+
+  getMetaData (id): Observable<any>{
+    return this.http.get<any>(this.url+"/en/API/Title/"+this.apiKey+"/"+id);
   }
 
 

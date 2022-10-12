@@ -16,7 +16,7 @@
 
       <ion-list *ngFor="let movie of result"  class="list" >
         <ion-item>
-          <ion-label>
+          <ion-label routerLink="/detail/{{movie.id}}">
             {{movie.title}}
           </ion-label>
         </ion-item>
